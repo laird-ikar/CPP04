@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:30 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 07:19:31 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:16:48 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@
 *	Constructors & Destructor
 ***********************/
 
-Cat::Cat(void)
+Cat::Cat(void):Animal()
 {
+	this->type = "Cat";
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-Cat::Cat(Cat const &src)
+Cat::Cat(Cat const &src):Animal()
 {
 	*this = src;
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
 Cat::~Cat(void)
 {
+	std::cout << "A cat is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -36,8 +40,9 @@ Cat::~Cat(void)
 *	Assignation Operators
 ***********************/
 
-Cat &	Cat::operator=(Cat const &src)
+Cat	&Cat::operator=(Cat const &src)
 {
+	this->Animal::operator=(src);
 	return (*this);
 }
 
@@ -60,3 +65,9 @@ Cat &	Cat::operator=(Cat const &src)
 /***********************
 *	Methods
 ***********************/
+
+void		Cat::makeSound(void) const
+{
+	std::cout << "Meow hsss moew" << std::endl;
+	return ;
+}

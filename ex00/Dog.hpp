@@ -6,17 +6,16 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:21 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 07:19:22 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 07:57:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
 
-class Dog
+class Dog : public Animal
 {
 	private:
 
@@ -26,6 +25,8 @@ class Dog
 		~Dog(void);
 
 		Dog	&operator=(Dog const &src);
+
+		void	makeSound(void) const;
 };
 
 #endif

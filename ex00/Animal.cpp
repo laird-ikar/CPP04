@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 07:19:36 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:17:17 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,21 @@
 
 Animal::Animal(void)
 {
+	this->type = "Ignotum animal novis";
+	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
 Animal::Animal(Animal const &src)
 {
 	*this = src;
+	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
 Animal::~Animal(void)
 {
+	std::cout << "An animal is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -38,6 +42,7 @@ Animal::~Animal(void)
 
 Animal &	Animal::operator=(Animal const &src)
 {
+	this->type = src.type;
 	return (*this);
 }
 
@@ -57,6 +62,17 @@ Animal &	Animal::operator=(Animal const &src)
 *	Getter & Setters
 ***********************/
 
+std::string	Animal::getType(void) const
+{
+	return (this->type);
+}
+
 /***********************
 *	Methods
 ***********************/
+
+void		Animal::makeSound(void) const
+{
+	std::cout << "*strange and unfamiliar sounds*" << std::endl;
+	return ;
+}
