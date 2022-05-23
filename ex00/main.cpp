@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:12 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:19:28 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:37:41 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,9 @@ int	main(void)
 		const Animal*		j = new Dog();
 		const Animal*		i = new Cat();
 
-		std::cout << meta->getType() << " " << std::endl;
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
+		std::cout << meta->getType() << " says " << i->makeSound() << std::endl;
+		std::cout << j->getType() << " says " << i->makeSound() << std::endl;
+		std::cout << i->getType() << " says " << i->makeSound() << std::endl;
 
 		delete meta;
 		delete j;
@@ -43,12 +40,9 @@ int	main(void)
 		const Animal*		j = new Dog();
 		const WrongAnimal*	i = new WrongCat();
 
-		std::cout << meta->getType() << " " << std::endl;
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
+		std::cout << meta->getType() << " says " << i->makeSound() << std::endl;
+		std::cout << j->getType() << " says " << i->makeSound() << std::endl;
+		std::cout << i->getType() << " says " << i->makeSound() << std::endl;
 
 		delete meta;
 		delete j;
