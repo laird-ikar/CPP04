@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:18:05 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 08:23:35 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 08:24:02 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-WrongCat::WrongCat(void):WrongAnimal()
+Brain::Brain(void)
 {
-	this->type = "Cat";
-	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-WrongCat::WrongCat(WrongCat const &src):WrongAnimal()
+Brain::Brain(Brain const &src)
 {
 	*this = src;
-	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-WrongCat::~WrongCat(void)
+Brain::~Brain(void)
 {
-	std::cout << "A cat is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -40,9 +36,8 @@ WrongCat::~WrongCat(void)
 *	Assignation Operators
 ***********************/
 
-WrongCat &	WrongCat::operator=(WrongCat const &src)
+Brain	&Brain::operator=(Brain const &src)
 {
-	this->WrongAnimal::operator=(src);
 	return (*this);
 }
 
@@ -65,9 +60,3 @@ WrongCat &	WrongCat::operator=(WrongCat const &src)
 /***********************
 *	Methods
 ***********************/
-
-void		WrongCat::makeSound(void) const
-{
-	std::cout << "Meow hsss moew" << std::endl;
-	return ;
-}

@@ -6,12 +6,12 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 07:17:48 by bguyot            #+#    #+#              #
-#    Updated: 2022/05/23 07:18:36 by bguyot           ###   ########.fr        #
+#    Updated: 2022/05/23 08:23:27 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= ex00.exe
-SRCS 		= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+NAME 		= ex01.exe
+SRCS 		= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS 		= ${SRCS:.cpp=.o}
 CCXX		= @c++
 RM			= @rm -rf

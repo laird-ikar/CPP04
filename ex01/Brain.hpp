@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:52 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:14:01 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 08:23:40 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 08:23:51 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#ifndef BRAIN_H
+#define BRAIN_H
 
-#include "WrongAnimal.hpp"
+#include <iostream>
+#include <string>
 
-class WrongCat : public WrongAnimal
+class Brain
 {
 	private:
 
+	protected:
+
 	public:
-		WrongCat(void);
-		WrongCat(WrongCat const &src);
-		~WrongCat(void);
+		Brain(void);
+		Brain(Brain const &src);
+		~Brain(void);
 
-		WrongCat	&operator=(WrongCat const &src);
-
-		void	makeSound(void) const;
+		Brain	&operator=(Brain const &src);
 };
 
 #endif
