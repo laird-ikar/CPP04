@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:12 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:37:41 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:45:13 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(void)
 {
 	std::cout << "Good Cat" << std::endl << std::endl;
 	{
-		const Animal*		meta = new Animal();
-		const Animal*		j = new Dog();
-		const Animal*		i = new Cat();
+		const Animal*	meta = new Animal();
+		const Animal*	j = new Dog();
+		const Animal*	i = new Cat();
 
 		std::cout << meta->getType() << " says " << i->makeSound() << std::endl;
 		std::cout << j->getType() << " says " << i->makeSound() << std::endl;
