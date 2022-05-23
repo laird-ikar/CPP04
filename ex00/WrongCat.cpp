@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 07:19:47 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:18:05 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@
 *	Constructors & Destructor
 ***********************/
 
-WrongCat::WrongCat(void)
+WrongCat::WrongCat(void):WrongAnimal()
 {
+	this->type = "Cat";
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-WrongCat::WrongCat(WrongCat const &src)
+WrongCat::WrongCat(WrongCat const &src):WrongAnimal()
 {
 	*this = src;
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
 WrongCat::~WrongCat(void)
 {
+	std::cout << "A cat is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -38,6 +42,7 @@ WrongCat::~WrongCat(void)
 
 WrongCat &	WrongCat::operator=(WrongCat const &src)
 {
+	this->WrongAnimal::operator=(src);
 	return (*this);
 }
 
@@ -60,3 +65,9 @@ WrongCat &	WrongCat::operator=(WrongCat const &src)
 /***********************
 *	Methods
 ***********************/
+
+void		WrongCat::makeSound(void) const
+{
+	std::cout << "Meow hsss moew" << std::endl;
+	return ;
+}

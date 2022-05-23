@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:43 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 07:19:44 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:17:41 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,21 @@
 
 WrongAnimal::WrongAnimal(void)
 {
+	this->type = "Ignotum animal novis";
+	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
 	*this = src;
+	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
+	std::cout << "An animal is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -36,8 +40,9 @@ WrongAnimal::~WrongAnimal(void)
 *	Assignation Operators
 ***********************/
 
-WrongAnimal &	WrongAnimal::operator=(WrongAnimal const &src)
+WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &src)
 {
+	this->type = src.type;
 	return (*this);
 }
 
@@ -57,6 +62,17 @@ WrongAnimal &	WrongAnimal::operator=(WrongAnimal const &src)
 *	Getter & Setters
 ***********************/
 
+std::string	WrongAnimal::getType(void) const
+{
+	return (this->type);
+}
+
 /***********************
 *	Methods
 ***********************/
+
+void		WrongAnimal::makeSound(void) const
+{
+	std::cout << "*strange and unfamiliar sounds*" << std::endl;
+	return ;
+}
