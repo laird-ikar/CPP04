@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "_Animal.hpp"
+#include "AAnimal.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-_Animal::_Animal(void)
+AAnimal::AAnimal(void)
 {
 	this->type = "Ignotum animal novis";
 	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
-_Animal::_Animal(_Animal const &src)
+AAnimal::AAnimal(AAnimal const &src)
 {
 	*this = src;
 	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
-_Animal::~_Animal(void)
+AAnimal::~AAnimal(void)
 {
 	std::cout << "An animal is going to the farm..." << std::endl;
 	return ;
@@ -40,7 +40,7 @@ _Animal::~_Animal(void)
 *	Assignation Operators
 ***********************/
 
-_Animal	&_Animal::operator=(_Animal const &src)
+AAnimal	&AAnimal::operator=(AAnimal const &src)
 {
 	this->type = src.type;
 	return (*this);
@@ -62,7 +62,7 @@ _Animal	&_Animal::operator=(_Animal const &src)
 *	Getter & Setters
 ***********************/
 
-std::string	_Animal::getType(void) const
+std::string	AAnimal::getType(void) const
 {
 	return (this->type);
 }
@@ -71,7 +71,7 @@ std::string	_Animal::getType(void) const
 *	Methods
 ***********************/
 
-void		_Animal::makeSound(void) const
+void		AAnimal::makeSound(void) const
 {
 	std::cout << "*strange and unfamiliar sounds*" << std::endl;
 	return ;

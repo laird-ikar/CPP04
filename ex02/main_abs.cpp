@@ -6,11 +6,11 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:12 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 17:38:12 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 07:29:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "_Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include <time.h>
@@ -21,5 +21,5 @@
 
 int	main(void)
 {
-	_Animal animal = new _Animal();
+	AAnimal animal = new AAnimal();
 }

@@ -13,10 +13,10 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "_Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public _Animal
+class Dog : public AAnimal
 {
 	private:
 		Brain	*brain;

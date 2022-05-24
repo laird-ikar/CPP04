@@ -16,7 +16,7 @@
 *	Constructors & Destructor
 ***********************/
 
-Cat::Cat(void):_Animal()
+Cat::Cat(void):AAnimal()
 {
 	this->brain = new Brain();
 	this->type = "Cat";
@@ -24,7 +24,7 @@ Cat::Cat(void):_Animal()
 	return ;
 }
 
-Cat::Cat(Cat const &src):_Animal()
+Cat::Cat(Cat const &src):AAnimal()
 {
 	*this = src;
 	std::cout << "A cat is born!" << std::endl;
@@ -46,7 +46,7 @@ Cat	&Cat::operator=(Cat const &src)
 {
 	delete this->brain;
 	this->brain = new Brain(*src.brain);
-	this->_Animal::operator=(src);
+	this->AAnimal::operator=(src);
 	return (*this);
 }
 

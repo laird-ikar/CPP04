@@ -6,11 +6,11 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:12 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 07:26:29 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 07:29:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "_Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include <time.h>
@@ -22,7 +22,7 @@
 int	main(void)
 {
 	srand (time(0));
-	const _Animal	*zoo[NB_ANIMALS];
+	const AAnimal	*zoo[NB_ANIMALS];
 	const Cat		*mabel = new Cat();
 	Cat				*dipper = new Cat();
 	int				i;

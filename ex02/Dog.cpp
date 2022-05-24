@@ -16,7 +16,7 @@
 *	Constructors & Destructor
 ***********************/
 
-Dog::Dog(void):_Animal()
+Dog::Dog(void):AAnimal()
 {
 	this->brain = new Brain();
 	this->type = "Dog";
@@ -24,7 +24,7 @@ Dog::Dog(void):_Animal()
 	return ;
 }
 
-Dog::Dog(Dog const &src):_Animal()
+Dog::Dog(Dog const &src):AAnimal()
 {
 	*this = src;
 	std::cout << "A dog is born!" << std::endl;
@@ -46,7 +46,7 @@ Dog	&Dog::operator=(Dog const &src)
 {
 	delete this->brain;
 	this->brain = new Brain(*src.brain);
-	this->_Animal::operator=(src);
+	this->AAnimal::operator=(src);
 	return (*this);
 }
 

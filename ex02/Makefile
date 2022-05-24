@@ -6,13 +6,13 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 07:17:48 by bguyot            #+#    #+#              #
-#    Updated: 2022/05/23 17:37:54 by bguyot           ###   ########.fr        #
+#    Updated: 2022/05/24 07:29:54 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= ex02.exe
-SRCS 		= main.cpp _Animal.cpp Cat.cpp Dog.cpp Brain.cpp
-SRCS_ABS	= main_abs.cpp _Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS 		= main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS_ABS	= main_abs.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS 		= ${SRCS:.cpp=.o}
 OBJS_ABS 	= ${SRCS_ABS:.cpp=.o}
 CCXX		= @c++
