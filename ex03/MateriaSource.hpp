@@ -6,19 +6,23 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:07:19 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 08:07:21 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 16:32:28 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_H
+#ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-#include <iostream>
-#include <string>
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
-class MateriaSource
+class IMateriaSource;
+class AMateria;
+
+class MateriaSource : public IMateriaSource
 {
 	private:
+		AMateria	*known[4];
 
 	public:
 		MateriaSource(void);
@@ -26,6 +30,9 @@ class MateriaSource
 		~MateriaSource(void);
 
 		MateriaSource	&operator=(MateriaSource const &src);
+
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

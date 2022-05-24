@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:32:59 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 08:01:57 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:05:57 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 AMateria::AMateria(void)
 {
+	this->type = "";
 	return ;
 }
 
@@ -38,6 +39,7 @@ AMateria::~AMateria(void)
 
 AMateria	&AMateria::operator=(AMateria const &src)
 {
+	this->type = src.type;
 	return (*this);
 }
 
@@ -56,6 +58,11 @@ AMateria	&AMateria::operator=(AMateria const &src)
 /***********************
 *	Getter & Setters
 ***********************/
+
+const std::string	&AMateria::getType()
+{
+	return this->type;
+}
 
 /***********************
 *	Methods

@@ -6,22 +6,25 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:32:56 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 07:51:26 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 13:16:42 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_H
+#ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
+#include "ICharacter.hpp"
+
+class ICharacter ;
 
 class AMateria
 {
 	private:
 
 	protected:
-		const std::string	type;
+		std::string	type;
 
 	public:
 		AMateria(void);
@@ -34,7 +37,7 @@ class AMateria
 		const std::string	&getType();
 
 		virtual AMateria	*clone(void) const = 0;
-		virtual void		use(ICharacter &target);
+		virtual void		use(ICharacter &target) = 0;
 };
 
 #endif

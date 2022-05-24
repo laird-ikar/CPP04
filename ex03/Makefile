@@ -6,11 +6,11 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 07:31:21 by bguyot            #+#    #+#              #
-#    Updated: 2022/05/24 08:08:20 by bguyot           ###   ########.fr        #
+#    Updated: 2022/05/24 16:50:52 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ex02.exe
+NAME 		=	ex03.exe
 SRCS 		=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp			\
 				MateriaSource.cpp
 SRCS_ABS	=	main_abs.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
@@ -18,7 +18,7 @@ OBJS 		=	${SRCS:.cpp=.o}
 OBJS_ABS 	=	${SRCS_ABS:.cpp=.o}
 CCXX		=	@c++
 RM			=	@rm -rf
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 .cpp.o :
 	$(CCXX) -c $(CXXFLAGS) -o $@ $<
@@ -42,5 +42,9 @@ fclean: clean
 	@printf "\e[35;5;161m\tBinary Clean \t[ ✓ ]\n\e[39m"
 
 re: fclean all
+
+check_leaks:
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes 		\
+	./$(NAME)
 
 .PHONY: all clean fclean re

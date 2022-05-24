@@ -6,9 +6,18 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:59:38 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 08:02:21 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 12:54:24 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
+
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
+
+class AMateria ;
 
 class ICharacter
 {
@@ -19,3 +28,5 @@ class ICharacter
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
 };
+
+#endif

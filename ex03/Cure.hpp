@@ -6,17 +6,20 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:42:00 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 08:03:06 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 12:55:57 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_H
+#ifndef CURE_HPP
 #define CURE_HPP
 
-#include <iostream>
-#include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cure
+class AMateria;
+class ICharacter;
+
+class Cure : public AMateria
 {
 	private:
 
@@ -26,9 +29,12 @@ class Cure
 		Cure(void);
 		Cure(const Cure &src);
 		Cure(const std::string type);
-		~Cure(void);
+		virtual ~Cure(void);
 
 		Cure		&operator=(const Cure &src);
+
+		virtual AMateria	*clone(void) const;
+		virtual void	use(ICharacter&);
 };
 
 #endif

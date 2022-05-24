@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:41:14 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 08:01:27 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 16:49:34 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 *	Constructors & Destructor
 ***********************/
 
-Ice::Ice(void)
+Ice::Ice(void):AMateria()
 {
+	this->type = "ice";
 	return ;
 }
 
-Ice::Ice(Ice const &src)
+Ice::Ice(Ice const &src):AMateria()
 {
 	*this = src;
 	return ;
@@ -38,6 +39,8 @@ Ice::~Ice(void)
 
 Ice	&Ice::operator=(Ice const &src)
 {
+	this->AMateria::operator=(src);
+	//this->type=src.type;
 	return (*this);
 }
 
@@ -60,3 +63,14 @@ Ice	&Ice::operator=(Ice const &src)
 /***********************
 *	Methods
 ***********************/
+
+void	Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *"	<< std::endl;
+}
+
+AMateria	*Ice::clone(void) const
+{
+	AMateria *clone = new Ice(*this);
+	return (clone);
+}

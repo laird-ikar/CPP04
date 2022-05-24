@@ -6,17 +6,20 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:41:30 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 08:03:11 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 12:55:32 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_H
+#ifndef ICE_HPP
 #define ICE_HPP
 
-#include <iostream>
-#include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Ice
+class AMateria;
+class ICharacter;
+
+class Ice : public AMateria
 {
 	private:
 
@@ -26,9 +29,12 @@ class Ice
 		Ice(void);
 		Ice(const Ice &src);
 		Ice(const std::string type);
-		~Ice(void);
+		virtual ~Ice(void);
 
 		Ice			&operator=(const Ice &src);
+
+		virtual AMateria	*clone(void) const;
+		virtual void	use(ICharacter&);
 };
 
 #endif
