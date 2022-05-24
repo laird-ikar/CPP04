@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 07:49:31 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/24 16:48:31 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 16:52:18 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,4 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
-
-	// ICharacter	*cloud = new Character("Cloud");
-	// AMateria	*m1 = new Cure();
-	// AMateria	*m2 = new Cure();
-	// AMateria	*m3 = new Ice();
-	// AMateria	*m4 = new Cure();
-	// AMateria	*m5 = new Ice();
-	//
-	// cloud->equip(m1);
-	// cloud->equip(m2);
-	// cloud->equip(m3);
-	// cloud->equip(m4);
-	// cloud->equip(m5);
-	// cloud->unequip(0);
-	//
-	// delete cloud;
-	// delete m1;
-	// delete m5;
-	// return 0;
 }
