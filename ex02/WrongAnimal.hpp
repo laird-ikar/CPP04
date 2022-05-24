@@ -1,60 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 08:23:40 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 17:07:30 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 07:19:49 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 08:15:15 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
-class Brain
+class WrongAnimal
 {
 	private:
-		std::string	ideas[100];
-		std::string	randomIdea(void);
 
 	protected:
+		std::string	type;
 
 	public:
-		Brain(void);
-		Brain(Brain const &src);
-		~Brain(void);
+		WrongAnimal(void);
+		WrongAnimal(WrongAnimal const &src);
+		virtual ~WrongAnimal(void);
 
-		Brain	&operator=(Brain const &src);
+		WrongAnimal	&operator=(WrongAnimal const &src);
 
-		void	printIdea(int i);
+		std::string	getType(void) const;
+
+		void		makeSound(void) const;
 };
 
 #endif
-
-
-
-
-
-
-
-
-/*
-ein imher narh strom
-
-
---- ----------------
-ein himmernhartstrom
-ooooxxoxxxxxxxxxxxxo
-ein eimernhartstroem
-ooooxxooooxxxooooxxo
-ein ihmernarhtstreom
-oooooxoooooxoooooxxo
-ein immernachtstraum
-oooooooooooooooooooo
-*/

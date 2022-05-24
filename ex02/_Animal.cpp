@@ -6,31 +6,31 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 09:01:51 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 17:30:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "_Animal.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-Animal::Animal(void)
+_Animal::_Animal(void)
 {
 	this->type = "Ignotum animal novis";
 	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const &src)
+_Animal::_Animal(_Animal const &src)
 {
 	*this = src;
 	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
-Animal::~Animal(void)
+_Animal::~_Animal(void)
 {
 	std::cout << "An animal is going to the farm..." << std::endl;
 	return ;
@@ -40,7 +40,7 @@ Animal::~Animal(void)
 *	Assignation Operators
 ***********************/
 
-Animal	&Animal::operator=(Animal const &src)
+_Animal	&_Animal::operator=(_Animal const &src)
 {
 	this->type = src.type;
 	return (*this);
@@ -62,7 +62,7 @@ Animal	&Animal::operator=(Animal const &src)
 *	Getter & Setters
 ***********************/
 
-std::string	Animal::getType(void) const
+std::string	_Animal::getType(void) const
 {
 	return (this->type);
 }
@@ -71,7 +71,7 @@ std::string	Animal::getType(void) const
 *	Methods
 ***********************/
 
-void		Animal::makeSound(void) const
+void		_Animal::makeSound(void) const
 {
 	std::cout << "*strange and unfamiliar sounds*" << std::endl;
 	return ;

@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:17:17 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 12:01:22 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ std::string	Animal::getType(void) const
 
 void		Animal::makeSound(void) const
 {
-	std::cout << "*strange and unfamiliar sounds*" << std::endl;
+	std::cout << "*strange and unfamiliar sound*" << std::endl;
 	return ;
 }

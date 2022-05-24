@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 09:01:51 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 07:19:30 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 09:03:19 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-Animal::Animal(void)
+Cat::Cat(void):_Animal()
 {
-	this->type = "Ignotum animal novis";
-	std::cout << "An animal is born!" << std::endl;
+	this->brain = new Brain();
+	this->type = "Cat";
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const &src)
+Cat::Cat(Cat const &src):_Animal()
 {
 	*this = src;
-	std::cout << "An animal is born!" << std::endl;
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-Animal::~Animal(void)
+Cat::~Cat(void)
 {
-	std::cout << "An animal is going to the farm..." << std::endl;
+	delete this->brain;
+	std::cout << "A cat is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -40,9 +42,11 @@ Animal::~Animal(void)
 *	Assignation Operators
 ***********************/
 
-Animal	&Animal::operator=(Animal const &src)
+Cat	&Cat::operator=(Cat const &src)
 {
-	this->type = src.type;
+	delete this->brain;
+	this->brain = new Brain(*src.brain);
+	this->_Animal::operator=(src);
 	return (*this);
 }
 
@@ -62,17 +66,17 @@ Animal	&Animal::operator=(Animal const &src)
 *	Getter & Setters
 ***********************/
 
-std::string	Animal::getType(void) const
+Brain	*Cat::getBrain(void) const
 {
-	return (this->type);
+	return (this->brain);
 }
 
 /***********************
 *	Methods
 ***********************/
 
-void		Animal::makeSound(void) const
+void		Cat::makeSound(void) const
 {
-	std::cout << "*strange and unfamiliar sounds*" << std::endl;
+	std::cout << "Meow hsss moew" << std::endl;
 	return ;
 }

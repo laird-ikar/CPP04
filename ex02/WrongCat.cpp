@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 09:01:51 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 07:19:46 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 08:18:05 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-Animal::Animal(void)
+WrongCat::WrongCat(void):WrongAnimal()
 {
-	this->type = "Ignotum animal novis";
-	std::cout << "An animal is born!" << std::endl;
+	this->type = "Cat";
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const &src)
+WrongCat::WrongCat(WrongCat const &src):WrongAnimal()
 {
 	*this = src;
-	std::cout << "An animal is born!" << std::endl;
+	std::cout << "A cat is born!" << std::endl;
 	return ;
 }
 
-Animal::~Animal(void)
+WrongCat::~WrongCat(void)
 {
-	std::cout << "An animal is going to the farm..." << std::endl;
+	std::cout << "A cat is going to the farm..." << std::endl;
 	return ;
 }
 
@@ -40,9 +40,9 @@ Animal::~Animal(void)
 *	Assignation Operators
 ***********************/
 
-Animal	&Animal::operator=(Animal const &src)
+WrongCat &	WrongCat::operator=(WrongCat const &src)
 {
-	this->type = src.type;
+	this->WrongAnimal::operator=(src);
 	return (*this);
 }
 
@@ -62,17 +62,12 @@ Animal	&Animal::operator=(Animal const &src)
 *	Getter & Setters
 ***********************/
 
-std::string	Animal::getType(void) const
-{
-	return (this->type);
-}
-
 /***********************
 *	Methods
 ***********************/
 
-void		Animal::makeSound(void) const
+void		WrongCat::makeSound(void) const
 {
-	std::cout << "*strange and unfamiliar sounds*" << std::endl;
+	std::cout << "Meow hsss moew" << std::endl;
 	return ;
 }

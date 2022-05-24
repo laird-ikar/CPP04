@@ -6,23 +6,23 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:12 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 17:17:52 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/24 07:26:29 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "_Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include <time.h>
 
 #ifndef NB_ANIMALS
-#define NB_ANIMALS 1
+#define NB_ANIMALS 8
 #endif
 
 int	main(void)
 {
 	srand (time(0));
-	const Animal	*zoo[NB_ANIMALS];
+	const _Animal	*zoo[NB_ANIMALS];
 	const Cat		*mabel = new Cat();
 	Cat				*dipper = new Cat();
 	int				i;

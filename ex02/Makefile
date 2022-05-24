@@ -6,13 +6,15 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 07:17:48 by bguyot            #+#    #+#              #
-#    Updated: 2022/05/23 08:50:12 by bguyot           ###   ########.fr        #
+#    Updated: 2022/05/23 17:37:54 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= ex01.exe
-SRCS 		= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+NAME 		= ex02.exe
+SRCS 		= main.cpp _Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS_ABS	= main_abs.cpp _Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS 		= ${SRCS:.cpp=.o}
+OBJS_ABS 	= ${SRCS_ABS:.cpp=.o}
 CCXX		= @c++
 RM			= @rm -rf
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
@@ -24,6 +26,10 @@ all: $(NAME)
 
 $(NAME):	$(OBJS)
 	$(CCXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+	@printf "\e[36m\tCompilation \t[ ✓ ]\n\e[39m"
+
+error: $(OBJS_ABS)
+	$(CCXX) $(CXXFLAGS) -o $(NAME) $(OBJS_ABS)
 	@printf "\e[36m\tCompilation \t[ ✓ ]\n\e[39m"
 
 clean:

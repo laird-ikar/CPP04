@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:30 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:16:48 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 09:03:19 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 Cat::Cat(void):Animal()
 {
+	this->brain = new Brain();
 	this->type = "Cat";
 	std::cout << "A cat is born!" << std::endl;
 	return ;
@@ -32,6 +33,7 @@ Cat::Cat(Cat const &src):Animal()
 
 Cat::~Cat(void)
 {
+	delete this->brain;
 	std::cout << "A cat is going to the farm..." << std::endl;
 	return ;
 }
@@ -42,6 +44,8 @@ Cat::~Cat(void)
 
 Cat	&Cat::operator=(Cat const &src)
 {
+	delete this->brain;
+	this->brain = new Brain(*src.brain);
 	this->Animal::operator=(src);
 	return (*this);
 }
@@ -61,6 +65,11 @@ Cat	&Cat::operator=(Cat const &src)
 /***********************
 *	Getter & Setters
 ***********************/
+
+Brain	*Cat::getBrain(void) const
+{
+	return (this->brain);
+}
 
 /***********************
 *	Methods

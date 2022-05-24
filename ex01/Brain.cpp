@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 08:23:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 08:24:25 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 17:09:36 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,26 @@
 
 Brain::Brain(void)
 {
+	int i = 0;
+	while (i < 100)
+	{
+		this->ideas[i] = randomIdea();
+		i++;
+	}
+	std::cout << "A brain was created" << std::endl;
 	return ;
 }
 
 Brain::Brain(Brain const &src)
 {
 	*this = src;
+	std::cout << "A brain was created" << std::endl;
 	return ;
 }
 
 Brain::~Brain(void)
 {
+	std::cout << "A brain was destructed" << std::endl;
 	return ;
 }
 
@@ -38,6 +47,12 @@ Brain::~Brain(void)
 
 Brain	&Brain::operator=(Brain const &src)
 {
+	int	i = 0;
+	while (i < 100)
+	{
+		this->ideas[i] = src.ideas[i];
+		i++;
+	}
 	return (*this);
 }
 
@@ -60,3 +75,23 @@ Brain	&Brain::operator=(Brain const &src)
 /***********************
 *	Methods
 ***********************/
+
+void	Brain::printIdea(int i)
+{
+	std::cout << this->ideas[i];
+}
+
+std::string	Brain::randomIdea(void)
+{
+	std::string	char_set = "qwertyuiopasdfghjkLZXCVBNM1234567890            ";
+	std::string	res;
+	int			i;
+
+	i = 0;
+	while (i < 16)
+	{
+		res += char_set[std::rand() % char_set.length()];
+		i++;
+	}
+	return res;
+}

@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 09:01:51 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 07:19:43 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 08:17:41 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-Animal::Animal(void)
+WrongAnimal::WrongAnimal(void)
 {
 	this->type = "Ignotum animal novis";
 	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const &src)
+WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
 	*this = src;
 	std::cout << "An animal is born!" << std::endl;
 	return ;
 }
 
-Animal::~Animal(void)
+WrongAnimal::~WrongAnimal(void)
 {
 	std::cout << "An animal is going to the farm..." << std::endl;
 	return ;
@@ -40,7 +40,7 @@ Animal::~Animal(void)
 *	Assignation Operators
 ***********************/
 
-Animal	&Animal::operator=(Animal const &src)
+WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &src)
 {
 	this->type = src.type;
 	return (*this);
@@ -62,7 +62,7 @@ Animal	&Animal::operator=(Animal const &src)
 *	Getter & Setters
 ***********************/
 
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (this->type);
 }
@@ -71,7 +71,7 @@ std::string	Animal::getType(void) const
 *	Methods
 ***********************/
 
-void		Animal::makeSound(void) const
+void		WrongAnimal::makeSound(void) const
 {
 	std::cout << "*strange and unfamiliar sounds*" << std::endl;
 	return ;

@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main_abs.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:39 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 12:01:32 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 07:19:12 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/23 17:38:12 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "_Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include <time.h>
 
-#include <iostream>
-#include <string>
-
-class Animal
-{
-	private:
-
-	protected:
-		std::string	type;
-
-	public:
-		Animal(void);
-		Animal(Animal const &src);
-		virtual ~Animal(void);
-
-		Animal		&operator=(Animal const &src);
-
-		std::string	getType(void) const;
-
-		virtual void	makeSound(void) const;
-};
-
+#ifndef NB_ANIMALS
+#define NB_ANIMALS 1
 #endif
+
+int	main(void)
+{
+	_Animal animal = new _Animal();
+}

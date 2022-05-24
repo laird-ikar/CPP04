@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 07:19:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 09:01:51 by bguyot           ###   ########.fr       */
+/*   Created: 2022/05/23 08:23:35 by bguyot            #+#    #+#             */
+/*   Updated: 2022/05/24 07:24:57 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Brain.hpp"
 
 /***********************
 *	Constructors & Destructor
 ***********************/
 
-Animal::Animal(void)
+Brain::Brain(void)
 {
-	this->type = "Ignotum animal novis";
-	std::cout << "An animal is born!" << std::endl;
+	int i = 0;
+	while (i < 100)
+	{
+		this->ideas[i] = randomIdea();
+		i++;
+	}
+	std::cout << "A brain was created" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const &src)
+Brain::Brain(Brain const &src)
 {
 	*this = src;
-	std::cout << "An animal is born!" << std::endl;
+	std::cout << "A brain was created" << std::endl;
 	return ;
 }
 
-Animal::~Animal(void)
+Brain::~Brain(void)
 {
-	std::cout << "An animal is going to the farm..." << std::endl;
+	std::cout << "A brain was destructed" << std::endl;
 	return ;
 }
 
@@ -40,9 +45,14 @@ Animal::~Animal(void)
 *	Assignation Operators
 ***********************/
 
-Animal	&Animal::operator=(Animal const &src)
+Brain	&Brain::operator=(Brain const &src)
 {
-	this->type = src.type;
+	int	i = 0;
+	while (i < 100)
+	{
+		this->ideas[i] = src.ideas[i];
+		i++;
+	}
 	return (*this);
 }
 
@@ -62,17 +72,27 @@ Animal	&Animal::operator=(Animal const &src)
 *	Getter & Setters
 ***********************/
 
-std::string	Animal::getType(void) const
-{
-	return (this->type);
-}
-
 /***********************
 *	Methods
 ***********************/
 
-void		Animal::makeSound(void) const
+void	Brain::printIdea(int i)
 {
-	std::cout << "*strange and unfamiliar sounds*" << std::endl;
-	return ;
+	std::cout << this->ideas[i];
+}
+
+std::string	Brain::randomIdea(void)
+{
+	static const std::string	char_set
+		= "qwertyuiopasdfghjkLZXCVBNM1234567890          ☭";
+	std::string	res;
+	int			i;
+
+	i = 0;
+	while (i < 16)
+	{
+		res += char_set[std::rand() % char_set.length()];
+		i++;
+	}
+	return res;
 }

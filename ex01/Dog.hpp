@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 07:19:21 by bguyot            #+#    #+#             */
-/*   Updated: 2022/05/23 07:57:54 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:30:12 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
 	private:
+		Brain	*brain;
 
 	public:
 		Dog(void);
