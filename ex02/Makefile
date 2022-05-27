@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 07:17:48 by bguyot            #+#    #+#              #
-#    Updated: 2022/05/24 07:29:54 by bguyot           ###   ########.fr        #
+#    Updated: 2022/05/27 07:26:07 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJS 		= ${SRCS:.cpp=.o}
 OBJS_ABS 	= ${SRCS_ABS:.cpp=.o}
 CCXX		= @c++
 RM			= @rm -rf
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 .cpp.o :
 	$(CCXX) -c $(CXXFLAGS) -o $@ $<

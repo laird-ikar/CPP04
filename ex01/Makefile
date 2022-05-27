@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 07:17:48 by bguyot            #+#    #+#              #
-#    Updated: 2022/05/23 08:50:12 by bguyot           ###   ########.fr        #
+#    Updated: 2022/05/27 07:26:00 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS 		= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS 		= ${SRCS:.cpp=.o}
 CCXX		= @c++
 RM			= @rm -rf
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 .cpp.o :
 	$(CCXX) -c $(CXXFLAGS) -o $@ $<
